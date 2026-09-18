@@ -1,0 +1,231 @@
+/* ==================== STAYNEST MAP ==================== */
+
+/* Makes the map fill the complete right-side card */
+
+#staysMap {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #dceee6;
+    border-radius: 8px;
+}
+
+
+/* Keeps the map inside the rounded card */
+
+.stays-map-card {
+    position: relative;
+    min-height: 178px;
+    overflow: hidden;
+
+    background-color: #dceee6;
+    border-radius: 8px;
+}
+
+
+/* ==================== EXPLORE MAP BUTTON ==================== */
+
+.explore-map-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    left: 20px;
+    z-index: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 18px;
+
+    color: #073f36;
+    background: rgba(255, 255, 255, 0.92);
+    border: none;
+    border-radius: 24px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    box-shadow: 0 5px 16px rgba(7, 63, 54, 0.12);
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.explore-map-btn:hover {
+    color: #ffffff;
+    background-color: #073f36;
+    transform: translateY(-2px);
+}
+
+
+/* ==================== LEAFLET CONTROLS ==================== */
+
+/* Removes Leaflet's strong default borders */
+
+.leaflet-bar {
+    overflow: hidden;
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 14px rgba(7, 63, 54, 0.16) !important;
+}
+
+
+/* Styles the plus and minus zoom buttons */
+
+.leaflet-bar a {
+    color: #073f36 !important;
+    background-color: rgba(255, 255, 255, 0.94) !important;
+    border-bottom-color: #e2e9e5 !important;
+}
+
+.leaflet-bar a:hover {
+    color: #ffffff !important;
+    background-color: #073f36 !important;
+}
+
+
+/* Makes the map credit smaller */
+
+.leaflet-control-attribution {
+    padding: 2px 5px !important;
+    font-size: 8px !important;
+    background: rgba(255, 255, 255, 0.75) !important;
+}
+
+
+/* ==================== CUSTOM LOCATION MARKERS ==================== */
+
+.stay-map-marker {
+    display: grid;
+    place-items: center;
+
+    width: 24px;
+    height: 24px;
+
+    color: #ffffff;
+    background-color: #073f36;
+    border: 3px solid #ffffff;
+    border-radius: 50% 50% 50% 0;
+
+    box-shadow: 0 4px 10px rgba(7, 63, 54, 0.28);
+    transform: rotate(-45deg);
+}
+
+
+/* Rotates the marker icon back to normal */
+
+.stay-map-marker i {
+    font-size: 8px;
+    transform: rotate(45deg);
+}
+
+
+/* ==================== PROPERTY POPUP ==================== */
+
+.leaflet-popup-content-wrapper {
+    padding: 0;
+    overflow: hidden;
+
+    background-color: #ffffff;
+    border-radius: 9px;
+
+    box-shadow: 0 8px 24px rgba(7, 63, 54, 0.18);
+}
+
+.leaflet-popup-content {
+    width: 180px !important;
+    margin: 0 !important;
+}
+
+
+/* Removes the default white popup tip */
+
+.leaflet-popup-tip {
+    background-color: #ffffff;
+}
+
+
+/* Image and information popup */
+
+.map-property-popup {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 9px;
+    align-items: center;
+
+    padding: 7px;
+}
+
+.map-property-popup img {
+    width: 70px;
+    height: 65px;
+
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.map-property-popup div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.map-property-popup strong {
+    color: #102e29;
+    font-family: "Playfair Display", serif;
+    font-size: 13px;
+}
+
+.map-property-popup span {
+    color: #65716d;
+    font-size: 9px;
+}
+
+.map-property-popup a {
+    margin-top: 3px;
+
+    color: #073f36;
+    font-size: 9px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.map-property-popup a:hover {
+    text-decoration: underline;
+}
+
+
+/* Leaflet's popup close button */
+
+.leaflet-container a.leaflet-popup-close-button {
+    top: 2px;
+    right: 2px;
+
+    width: 19px;
+    height: 19px;
+
+    color: #073f36;
+    font-size: 15px;
+}
+
+
+/* ==================== MOBILE ==================== */
+
+@media (max-width: 575.98px) {
+    .stays-map-card {
+        min-height: 210px;
+    }
+
+    .explore-map-btn {
+        right: 14px;
+        bottom: 12px;
+        left: 14px;
+    }
+}

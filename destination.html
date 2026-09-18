@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore unforgettable destinations with Staynest.">
+  <title>Destinations | Staynest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./Css/destination.css">
+  <link rel="stylesheet" href="./Css/responsive.css">
+</head>
+<body class="destination-page">
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container destination-container">
+        <a class="navbar-brand" href="index.html"><img src="./images/transparent logo.png" alt="Staynest logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#destinationNavbar" aria-controls="destinationNavbar" aria-expanded="false" aria-label="Open navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="destinationNavbar">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="stays.html">Stays</a></li>
+            <li class="nav-item"><a class="nav-link active" href="destination.html">Destinations</a></li>
+            <li class="nav-item"><a class="nav-link" href="experience.html">Experiences</a></li>
+            
+          </ul>
+          <div class="nav-actions">
+            <div class="nav-search-wrap">
+              <div class="nav-search-box" id="navSearchBox">
+                <input type="search" id="navbarSearchInput" placeholder="Search destinations..." aria-label="Search destinations">
+                <button type="button" id="navbarSearchClose" aria-label="Close search">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <button type="button" id="navbarSearchButton" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <button type="button" aria-label="Wishlist">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <button class="plan-trip-btn" id="planTripButton" type="button">Plan Your Trip</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="destination-hero">
+      <img src="./images/3rd page hero.png" alt="Santorini coast and white buildings at sunset">
+      <div class="hero-overlay"></div>
+      <div class="container destination-container hero-content">
+        <h1>Where Will<br>You Go Next?</h1>
+        <p>Discover incredible places, unforgettable stays,<br>and experiences that stay with you forever.</p>
+        <form class="destination-search-form" id="destinationSearchForm">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="destinationSearchInput" type="search" placeholder="Search Bali, Dubai, Manali..." aria-label="Search destinations">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <p class="hero-handwriting">Good<br>Places<br>Brighter<br>People</p>
+    </section>
+
+    <section class="category-strip" aria-label="Destination categories">
+      <div class="container destination-container category-list">
+        <button class="category-button active" type="button" data-category="beaches"><span><i class="fa-solid fa-umbrella-beach"></i></span>Beaches</button>
+        <button class="category-button" type="button" data-category="mountains"><span><i class="fa-solid fa-mountain-sun"></i></span>Mountains</button>
+        <button class="category-button" type="button" data-category="cities"><span><i class="fa-regular fa-building"></i></span>Cities</button>
+        <button class="category-button" type="button" data-category="islands"><span><i class="fa-solid fa-water"></i></span>Islands</button>
+        <button class="category-button" type="button" data-category="culture"><span><i class="fa-solid fa-landmark"></i></span>Culture</button>
+        <button class="category-button" type="button" data-category="nature"><span><i class="fa-solid fa-leaf"></i></span>Nature</button>
+        <a class="category-explore" href="#moodDestinations">Explore<br>by category <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <section class="popular-section" id="popularDestinations">
+      <div class="container destination-container popular-grid">
+        <div class="section-copy">
+          <p class="eyebrow">Popular destinations</p>
+          <h2>Places Everyone<br>Is Talking About</h2>
+          <span class="short-line"></span>
+          <p class="section-description">From tropical beaches to snow-covered peaks, explore destinations that capture every kind of traveller's dream.</p>
+          <a class="primary-button" href="#trendingDestinations">Explore All Destinations <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <article class="popular-card popular-card-large" data-name="Bali" data-category="beaches islands nature">
+          <img src="./images/bali.png" alt="Tropical Bali beach">
+          <div class="card-shade"></div>
+          <div class="popular-card-content"><span>01</span><strong><i class="fa-solid fa-location-dot"></i> Bali</strong></div>
+          <a href="#baliSpotlight" aria-label="Explore Bali"><i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <div class="popular-stack">
+          <article class="popular-card" data-name="Santorini" data-category="beaches islands culture">
+            <img src="./images/santorini.png" alt="Santorini at sunset"><div class="card-shade"></div>
+            <div class="popular-card-content"><span>02</span><strong><i class="fa-solid fa-location-dot"></i> Santorini</strong></div>
+            <a href="#" aria-label="Explore Santorini"><i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="popular-card" data-name="Manali" data-category="mountains nature">
+            <img src="./images/snowpeak cottage.png" alt="Snowy cabin in Manali"><div class="card-shade"></div>
+            <div class="popular-card-content"><span>03</span><strong><i class="fa-solid fa-location-dot"></i> Manali</strong></div>
+            <a href="#" aria-label="Explore Manali"><i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+        </div>
+      </div>
+
+      <p
+        class="destination-no-results"
+        id="destinationNoResults"
+        hidden
+      >
+        Sorry, we could not find that destination.
+      </p>
+
+    </section>
+
+    <section class="mood-section" id="moodDestinations">
+      <div class="container destination-container mood-layout">
+        <div class="section-copy mood-copy">
+          <p class="eyebrow">Explore by mood</p>
+          <h2>Find a Destination<br>That Feels Right</h2><span class="short-line"></span>
+        </div>
+        <div class="mood-cards">
+          <article class="mood-card" data-category="beaches"><img src="./images/romatic escape 3rd page.png" alt="Romantic sunset escape"><div></div><i class="fa-regular fa-heart"></i><h3>Romantic Escape</h3></article>
+          <article class="mood-card" data-category="mountains"><img src="./images/weekend adventure 3rd page.png" alt="Mountain adventure"><div></div><i class="fa-solid fa-mountain-sun"></i><h3>Weekend Adventure</h3></article>
+          <article class="mood-card" data-category="nature"><img src="./images/welness retreat 3rd page.png" alt="Tropical wellness retreat"><div></div><i class="fa-solid fa-spa"></i><h3>Wellness Retreat</h3></article>
+          <article class="mood-card" data-category="islands"><img src="./images/luxury gateway 3rd page.png" alt="Luxury waterside resort"><div></div><i class="fa-regular fa-gem"></i><h3>Luxury Getaway</h3></article>
+          <article class="mood-card" data-category="culture"><img src="./images/cultural journey 3rd page.png" alt="Temple cultural destination"><div></div><i class="fa-solid fa-landmark"></i><h3>Cultural Journey</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trending-section" id="trendingDestinations">
+      <div class="container destination-container">
+        <div class="trending-heading"><p class="eyebrow">Trending destinations</p><a href="#">See All <i class="fa-solid fa-arrow-right"></i></a></div>
+        <div class="trending-carousel">
+          <button class="carousel-arrow previous" type="button" aria-label="Previous destinations"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="trending-track">
+            <article data-name="Tokyo"><img src="./images/tokyo 3rd page.png" alt="Tokyo"><span>Tokyo</span></article>
+            <article data-name="Swiss Alps"><img src="./images/Swiss alps 3rd page.png" alt="Swiss Alps"><span>Swiss Alps</span></article>
+            <article data-name="Kyoto"><img src="./images/kyoto 3rd page.png" alt="Kyoto"><span>Kyoto</span></article>
+            <article data-name="New York"><img src="./images/new york 3rd page.png" alt="New York"><span>New York</span></article>
+            <article data-name="Paris"><img src="./images/paris 3rd page.png" alt="Paris"><span>Paris</span></article>
+            <article data-name="Phuket"><img src="./images/phuket 3rd page.png" alt="Phuket"><span>Phuket</span></article>
+          </div>
+          <button class="carousel-arrow next" type="button" aria-label="Next destinations"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="bali-spotlight" id="baliSpotlight">
+      <img src="./images/Bali spotlight 3rd page banner bottom.png" alt="Bali lake, temple and mountains at sunset"><div class="spotlight-overlay"></div>
+      <div class="container destination-container spotlight-content">
+        <div><p class="eyebrow">Destination spotlight</p><h2>Bali</h2><p>Tropical beaches, lush landscapes and<br>a slower, happier way of life.</p><a href="#" class="light-button">Explore Bali <i class="fa-solid fa-arrow-right"></i></a></div>
+        <div class="spotlight-stats">
+          <div><i class="fa-regular fa-sun"></i><strong id="baliTemperature" aria-live="polite">Loading...</strong><span id="baliWeatherLabel">Live Temperature</span></div>
+          <div><i class="fa-solid fa-bed"></i><strong>24+</strong><span>Stays</span></div>
+          <div><i class="fa-solid fa-indian-rupee-sign"></i><strong>₹4,999</strong><span>Avg. Price</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-strip">
+      <div class="container destination-container newsletter-layout">
+        <i class="fa-regular fa-paper-plane"></i><div><h2>Get Travel Inspiration in Your Inbox</h2><p>Join our newsletter for exclusive deals, travel tips and destination guides.</p></div>
+        <form class="destination-newsletter"><input type="email" placeholder="Your email address" aria-label="Email address" required><button type="submit">Subscribe</button></form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="destination-footer">
+    <div class="container destination-container footer-layout">
+      <div class="footer-brand"><img src="./images/logo.png" alt="Staynest"><p>Stay Different. Travel Deeper.</p></div>
+      <nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="stays.html">Stays</a><a href="destination.html">Destinations</a><a href="experience.html">Experiences</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+      <div class="social-links"><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a></div>
+    </div>
+  </footer>
+
+  
+  <!-- ==================== TRIP PLANNER ==================== -->
+  <div class="trip-planner" id="tripPlanner" aria-hidden="true">
+    <div class="trip-planner-card">
+      <button class="trip-planner-close" id="tripPlannerClose" type="button" aria-label="Close trip planner">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="trip-planner-form-view" id="tripPlannerFormView">
+        <p class="eyebrow">Your trip, your way</p>
+        <h2>Let’s Plan Something Good</h2>
+        <p class="trip-planner-intro">Tell us what you have in mind and Staynest will shape a simple trip idea for you.</p>
+
+        <form id="tripPlannerForm">
+          <div class="trip-field">
+            <label for="tripDestination">Where do you want to go?</label>
+            <select id="tripDestination" required>
+              <option value="">Choose a destination</option>
+              <option value="Bali">Bali</option>
+              <option value="Santorini">Santorini</option>
+              <option value="Manali">Manali</option>
+              <option value="Tokyo">Tokyo</option>
+              <option value="Kyoto">Kyoto</option>
+              <option value="Paris">Paris</option>
+              <option value="Phuket">Phuket</option>
+            </select>
+          </div>
+
+          <div class="trip-two-columns">
+            <div class="trip-field">
+              <label for="tripCheckIn">Check-in</label>
+              <input id="tripCheckIn" type="date" required>
+            </div>
+            <div class="trip-field">
+              <label for="tripCheckOut">Check-out</label>
+              <input id="tripCheckOut" type="date" required>
+            </div>
+          </div>
+
+          <div class="trip-two-columns">
+            <div class="trip-field">
+              <label for="tripGuests">Travellers</label>
+              <select id="tripGuests">
+                <option value="1">1 Traveller</option>
+                <option value="2" selected>2 Travellers</option>
+                <option value="3">3 Travellers</option>
+                <option value="4">4 Travellers</option>
+                <option value="5">5+ Travellers</option>
+              </select>
+            </div>
+            <div class="trip-field">
+              <label for="tripBudget">Budget / night</label>
+              <select id="tripBudget">
+                <option value="Budget-friendly">Under ₹5,000</option>
+                <option value="Comfort">₹5,000 – ₹10,000</option>
+                <option value="Premium">₹10,000 – ₹20,000</option>
+                <option value="Luxury">₹20,000+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="trip-field">
+            <label for="tripMood">What kind of trip?</label>
+            <select id="tripMood">
+              <option value="Romantic">Romantic Escape</option>
+              <option value="Adventure">Adventure</option>
+              <option value="Wellness">Wellness & Slow Travel</option>
+              <option value="Culture">Culture & Local Life</option>
+              <option value="Food">Food & Experiences</option>
+              <option value="Nature">Nature & Peace</option>
+            </select>
+          </div>
+
+          <button class="trip-create-btn" type="submit">
+            Create My Trip <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+
+      <div class="trip-result" id="tripResult" hidden>
+        <p class="eyebrow">Your Staynest trip</p>
+        <h2 id="tripResultTitle">Your Escape</h2>
+        <p id="tripResultDates"></p>
+
+        <div class="trip-result-grid">
+          <div><span>Travellers</span><strong id="tripResultGuests"></strong></div>
+          <div><span>Style</span><strong id="tripResultMood"></strong></div>
+          <div><span>Budget</span><strong id="tripResultBudget"></strong></div>
+        </div>
+
+        <div class="trip-suggestion">
+          <span>Staynest suggests</span>
+          <p id="tripSuggestion"></p>
+        </div>
+
+        <div class="trip-result-actions">
+          <a class="trip-create-btn" id="tripViewStays" href="stays.html">
+            View Matching Stays <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a class="trip-secondary-btn" href="experience.html">Explore Experiences</a>
+        </div>
+
+        <button class="trip-start-over" id="tripStartOver" type="button">Change my plan</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./Javascript/destination.js"></script>
+</body>
+</html>

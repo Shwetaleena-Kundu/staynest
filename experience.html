@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover meaningful local experiences with Staynest.">
+  <title>Experiences | Staynest</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="./Css/experience.css">
+<link rel="stylesheet" href="./Css/responsive.css">
+</head>
+
+<body>
+  <!-- ========================= NAVBAR + HERO ========================= -->
+  <header class="hero" id="home">
+    <img class="hero-bg" src="./images/4th page hero banner.png" alt="Traveller watching sunset over tropical islands">
+    <div class="hero-shade"></div>
+
+    <nav class="navbar container" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Staynest home">
+  <img src="./images/transparent logo.png" alt="Staynest" class="navbar-logo">
+</a>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="nav-panel">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="stays.html">Stays</a></li>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a class="active" href="experience.html">Experiences</a></li>
+      
+        </ul>
+
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="icon-button"
+            id="searchOpenButton"
+            aria-label="Open destination search"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+          <span class="nav-divider"></span>
+          <button type="button" class="icon-button" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <button
+  type="button"
+  class="pill-button light small open-trip-modal"
+>
+  Plan Your Trip
+  <i class="fa-solid fa-arrow-right"></i>
+</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hidden destination search panel -->
+    <div
+      class="destination-search-panel"
+      id="destinationSearchPanel"
+      aria-hidden="true"
+    >
+      <form class="destination-search-form" id="destinationSearchForm">
+        <i
+          class="fa-solid fa-location-dot search-location-icon"
+          aria-hidden="true"
+        ></i>
+
+        <input
+          type="search"
+          id="destinationSearchInput"
+          placeholder="Where would you like to go?"
+          aria-label="Search destinations"
+          autocomplete="off"
+        >
+
+        <button class="destination-search-submit" type="submit">
+          Search
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <button
+          class="destination-search-close"
+          id="searchCloseButton"
+          type="button"
+          aria-label="Close destination search"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </form>
+    </div>
+
+    <div class="hero-content container">
+      <div class="hero-copy">
+        <p class="eyebrow light-text">Experiences that stay with you</p>
+        <h1>Don’t Just Visit.<br>Live the Place.</h1>
+        <p class="hero-description">From sunrise treks to home-cooked meals, from hidden beaches to local stories — discover experiences that bring you closer to the heart of a destination.</p>
+        <a href="#featured-experience" class="pill-button light">Explore Experiences <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="good-places-stamp" aria-hidden="true">
+        <span>Good</span><span>Places</span><span>Brighter</span><span>People</span>
+      </div>
+
+      <div class="hero-note" aria-hidden="true">Collect<br>Stories<br>Not Things</div>
+
+      <figure class="hero-polaroid">
+        <img src="./images/hero underwater polaroid.png" alt="Woman swimming in clear ocean water">
+        <figcaption>Same Ocean<br>Different You</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================= MOOD SELECTOR ========================= -->
+    <section class="moods" aria-labelledby="mood-heading">
+      <div class="leaf-corner leaf-left" aria-hidden="true"></div>
+      <div class="leaf-corner leaf-right" aria-hidden="true"></div>
+      <p class="side-note left-note">Different Paths<br>Same Happiness</p>
+      <p class="side-note right-note">What’s Your<br>Mood Today?</p>
+
+      <div class="container mood-inner">
+        <p class="eyebrow" id="mood-heading">Today I want to feel...</p>
+        <div class="mood-list">
+          <button class="mood-item active" type="button" data-mood="adventurous">
+            <span class="mood-circle green"><i class="fa-solid fa-mountain"></i></span><span>Adventurous</span>
+          </button>
+          <button class="mood-item" type="button" data-mood="peaceful">
+            <span class="mood-circle coral"><i class="fa-brands fa-canadian-maple-leaf"></i></span><span>Peaceful</span>
+          </button>
+          <button class="mood-item" type="button" data-mood="cultural">
+            <span class="mood-circle amber"><i class="fa-solid fa-landmark"></i></span><span>Cultural</span>
+          </button>
+          <button class="mood-item" type="button" data-mood="foodie">
+            <span class="mood-circle rose"><i class="fa-solid fa-utensils"></i></span><span>Foodie</span>
+          </button>
+          <button class="mood-item" type="button" data-mood="romantic">
+            <span class="mood-circle lavender"><i class="fa-regular fa-heart"></i></span><span>Romantic</span>
+          </button>
+          <button class="mood-item" type="button" data-mood="wild">
+            <span class="mood-circle blue"><i class="fa-solid fa-water"></i></span><span>Wild</span>
+          </button>
+          <button class="mood-item" type="button" data-mood="creative">
+            <span class="mood-circle sage"><i class="fa-solid fa-palette"></i></span><span>Creative</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  <!-- ================= FEATURED EXPERIENCE CAROUSEL ================= -->
+<section class="featured" id="featured-experience">
+
+  <div class="experience-slides">
+
+    <!-- Slide 01 -->
+    <article class="experience-slide active">
+      <img
+        src="./images/carousel 4th page 1.png"
+        alt="Cook with a Balinese Family"
+        class="experience-background"
+      >
+
+      <div class="featured-shade"></div>
+
+      <div class="featured-grid container">
+        <div class="featured-copy">
+
+          <p class="eyebrow light-text">
+            Experience of the month
+          </p>
+
+          <div class="experience-title">
+            <span class="number">01</span>
+
+            <h2>
+              Cook with a<br>
+              Balinese Family
+            </h2>
+          </div>
+
+          <div class="experience-meta">
+            <span>
+              <i class="fa-solid fa-location-dot"></i>
+              Ubud, Bali
+            </span>
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              3 Hours
+            </span>
+
+            <span>
+              <i class="fa-solid fa-user-group"></i>
+              Small Groups
+            </span>
+          </div>
+
+          <p class="experience-text">
+            Visit a local home, explore fresh ingredients from the market,
+            learn traditional recipes and share a meal together.
+            More than a cooking class — it’s a cultural connection.
+          </p>
+
+          <a href="#" class="pill-button light">
+            Discover This Experience
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <p class="flavour-note">
+          Real People<br>
+          Real Flavours
+        </p>
+      </div>
+    </article>
+
+
+    <!-- Slide 02 -->
+    <article class="experience-slide">
+      <img
+        src="./images/carousel 4th page 2.png"
+        alt="Sunrise Volcano Trek"
+        class="experience-background"
+      >
+
+      <div class="featured-shade"></div>
+
+      <div class="featured-grid container">
+        <div class="featured-copy">
+
+          <p class="eyebrow light-text">
+            Adventure above the clouds
+          </p>
+
+          <div class="experience-title">
+            <span class="number">02</span>
+
+            <h2>
+              Sunrise<br>
+              Volcano Trek
+            </h2>
+          </div>
+
+          <div class="experience-meta">
+            <span>
+              <i class="fa-solid fa-location-dot"></i>
+              Mount Batur, Bali
+            </span>
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              5 Hours
+            </span>
+
+            <span>
+              <i class="fa-solid fa-user-group"></i>
+              Small Groups
+            </span>
+          </div>
+
+          <p class="experience-text">
+            Begin before dawn and climb above the clouds with a local guide.
+            Reach the summit as the first golden light appears over Bali.
+          </p>
+
+          <a href="#" class="pill-button light">
+            Discover This Experience
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <p class="flavour-note">
+          Chase Light<br>
+          Find Wonder
+        </p>
+      </div>
+    </article>
+
+
+    <!-- Slide 03 -->
+    <article class="experience-slide">
+      <img
+        src="./images/carousel 4th page 3.png"
+        alt="Hidden Lagoon Kayaking"
+        class="experience-background"
+      >
+
+      <div class="featured-shade"></div>
+
+      <div class="featured-grid container">
+        <div class="featured-copy">
+
+          <p class="eyebrow light-text">
+            Into the wild
+          </p>
+
+          <div class="experience-title">
+            <span class="number">03</span>
+
+            <h2>
+              Hidden Lagoon<br>
+              Kayaking
+            </h2>
+          </div>
+
+          <div class="experience-meta">
+            <span>
+              <i class="fa-solid fa-location-dot"></i>
+              El Nido, Philippines
+            </span>
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              4 Hours
+            </span>
+
+            <span>
+              <i class="fa-solid fa-user-group"></i>
+              Maximum 8 Guests
+            </span>
+          </div>
+
+          <p class="experience-text">
+            Paddle through turquoise water between towering limestone cliffs.
+            Discover quiet coves and hidden lagoons away from the crowds.
+          </p>
+
+          <a href="#" class="pill-button light">
+            Discover This Experience
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <p class="flavour-note">
+          Paddle Slowly<br>
+          Look Closer
+        </p>
+      </div>
+    </article>
+
+
+    <!-- Slide 04 -->
+    <article class="experience-slide">
+      <img
+        src="./images/carousel 4th page 4.png"
+        alt="Traditional Village Night"
+        class="experience-background"
+      >
+
+      <div class="featured-shade"></div>
+
+      <div class="featured-grid container">
+        <div class="featured-copy">
+
+          <p class="eyebrow light-text">
+            An evening of stories
+          </p>
+
+          <div class="experience-title">
+            <span class="number">04</span>
+
+            <h2>
+              Traditional<br>
+              Village Night
+            </h2>
+          </div>
+
+          <div class="experience-meta">
+            <span>
+              <i class="fa-solid fa-location-dot"></i>
+              Gianyar, Bali
+            </span>
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              4 Hours
+            </span>
+
+            <span>
+              <i class="fa-solid fa-user-group"></i>
+              Small Groups
+            </span>
+          </div>
+
+          <p class="experience-text">
+            Spend an evening with a Balinese community through traditional
+            music, local food and stories shared beneath the night sky.
+          </p>
+
+          <a href="#" class="pill-button light">
+            Discover This Experience
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <p class="flavour-note">
+          Old Stories<br>
+          New Memories
+        </p>
+      </div>
+    </article>
+
+  </div>
+
+
+  <!-- Carousel arrows -->
+  <button
+    class="slider-arrow previous"
+    type="button"
+    aria-label="Previous experience"
+  >
+    <i class="fa-solid fa-arrow-left"></i>
+  </button>
+
+  <button
+    class="slider-arrow next"
+    type="button"
+    aria-label="Next experience"
+  >
+    <i class="fa-solid fa-arrow-right"></i>
+  </button>
+
+
+  <!-- Carousel indicators -->
+  <div class="slider-count" aria-label="Choose an experience">
+    <button class="current" type="button" data-slide="0">01</button>
+    <button type="button" data-slide="1">02</button>
+    <button type="button" data-slide="2">03</button>
+    <button type="button" data-slide="3">04</button>
+  </div>
+
+</section>
+<!-- ========================= TRAVELLER STORIES ========================= -->
+
+<section class="stories" id="stories">
+
+  <div class="container">
+
+    <div class="section-heading-row">
+
+      <div>
+        <p class="eyebrow">
+          Real people. Real stories.
+        </p>
+
+        <h2>
+          Moments From Our Travellers
+        </h2>
+      </div>
+
+      <a class="text-link" href="#">
+        View More Stories
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+
+    <div class="polaroid-grid">
+
+      <!-- Story 01 -->
+      <article class="story-card tilt-left">
+
+        <span class="tape"></span>
+
+        <img
+          src="./images/group trip.png"
+          alt="Friends enjoying a mountain trip together"
+        >
+
+        <p>
+          “Came for the views.<br>
+          Stayed for the people.”
+        </p>
+
+        <small>
+          – Kotor, Montenegro
+        </small>
+
+      </article>
+
+
+      <!-- Story 02 -->
+      <article class="story-card tilt-right">
+
+        <span class="tape"></span>
+
+        <img
+          src="./images/night market.png"
+          alt="Travellers enjoying food at a night market"
+        >
+
+        <p>
+          “Good food.<br>
+          Even better company.”
+        </p>
+
+        <small>
+          – Chiang Mai, Thailand
+        </small>
+
+      </article>
+
+
+      <!-- Story 03 -->
+      <article class="story-card tilt-left-soft">
+
+        <span class="tape"></span>
+
+        <img
+          src="./images/local craft memory.png"
+          alt="Travellers learning pottery from a local craftswoman"
+        >
+
+        <p>
+          “Made by hand.<br>
+          Remembered by heart.”
+        </p>
+
+        <small>
+          – Ubud, Indonesia
+        </small>
+
+      </article>
+
+
+      <!-- Story 04 -->
+      <article class="story-card tilt-right-soft">
+
+        <span class="tape"></span>
+
+        <img
+          src="./images/rain memory.png"
+          alt="Friends laughing together during unexpected rain"
+        >
+
+        <p>
+          “The rain became<br>
+          our favourite memory.”
+        </p>
+
+        <small>
+          – Kathmandu, Nepal
+        </small>
+
+      </article>
+
+
+      <!-- Story 05 -->
+      <article class="story-card tilt-right">
+
+        <span class="tape"></span>
+
+        <img
+          src="./images/boat jump memory.png"
+          alt="Friends jumping from a boat into clear ocean water"
+        >
+
+        <p>
+          “One, two, three —<br>
+          jump!”
+        </p>
+
+        <small>
+          – Phi Phi Islands, Thailand
+        </small>
+
+      </article>
+
+    </div>
+
+  </div>
+
+
+  <div class="travel-stamp" aria-hidden="true">
+    Travel<br>
+    People<br>
+    Stories
+  </div>
+
+  <p class="stories-side-note">
+    Different People<br>
+    Same Happiness ♡
+  </p>
+
+</section>
+    <!-- ========================= CALL TO ACTION ========================= -->
+    <section class="cta">
+      <img src="./images/4th page ending banner.png" alt="Romantic sunset picnic overlooking the ocean">
+      <div class="cta-shade"></div>
+      <p class="cta-note">Collect<br>Experiences<br>Not Things</p>
+      <div class="cta-content">
+        <p class="eyebrow light-text">A kinder way to explore</p>
+        <h2>Let’s Make More<br>Good Days</h2>
+       <button
+  type="button"
+  class="pill-button light open-trip-modal"
+>
+  Plan Your Trip
+  <i class="fa-solid fa-arrow-right"></i>
+</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Staynest home">
+  <img src="./images/transparent logo.png" alt="Staynest" class="footer-logo">
+</a>
+        <p>Stays · Experiences · Stories</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a><a href="stays.html">Stays</a><a href="destination.html">Destinations</a><a href="experience.html">Experiences</a><a href="about.html">About</a>
+      </nav>
+
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+      </div>
+
+      <form class="footer-newsletter">
+        <label for="footerEmail">Join for travel inspiration</label>
+        <div class="email-field"><input id="footerEmail" type="email" placeholder="Enter your email" required><button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button></div>
+      </form>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Staynest. All rights reserved.</p>
+      <div><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="about.html#contact">Contact Us</a></div>
+    </div>
+  </footer>
+  <!-- ================= PLAN YOUR TRIP MODAL ================= -->
+
+<div class="trip-modal" id="tripModal">
+
+  <div class="trip-modal-overlay"></div>
+
+  <div class="trip-modal-content">
+
+    <button
+      type="button"
+      class="trip-modal-close"
+      id="tripModalClose"
+      aria-label="Close trip planner"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <p class="eyebrow">
+      Your trip, your way
+    </p>
+
+    <h2>
+      Let’s Plan Something Good
+    </h2>
+
+    <p class="trip-modal-description">
+      Tell us what you have in mind and Staynest will
+      shape a simple trip idea for you.
+    </p>
+
+
+    <form id="tripPlannerForm">
+
+      <div class="trip-form-group full-width">
+
+        <label for="tripDestination">
+          Where do you want to go?
+        </label>
+
+        <select id="tripDestination" required>
+          <option value="">Choose a destination</option>
+          <option value="Bali">Bali</option>
+          <option value="Santorini">Santorini</option>
+          <option value="Manali">Manali</option>
+          <option value="Tokyo">Tokyo</option>
+          <option value="Kyoto">Kyoto</option>
+          <option value="Paris">Paris</option>
+          <option value="Phuket">Phuket</option>
+          <option value="Swiss Alps">Swiss Alps</option>
+        </select>
+
+      </div>
+
+
+      <div class="trip-form-row">
+
+        <div class="trip-form-group">
+
+          <label for="tripCheckIn">
+            Check-in
+          </label>
+
+          <input
+            type="date"
+            id="tripCheckIn"
+            required
+          >
+
+        </div>
+
+
+        <div class="trip-form-group">
+
+          <label for="tripCheckOut">
+            Check-out
+          </label>
+
+          <input
+            type="date"
+            id="tripCheckOut"
+            required
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="trip-form-row">
+
+        <div class="trip-form-group">
+
+          <label for="tripTravellers">
+            Travellers
+          </label>
+
+          <select id="tripTravellers">
+            <option value="1">1 Traveller</option>
+            <option value="2" selected>2 Travellers</option>
+            <option value="3">3 Travellers</option>
+            <option value="4">4 Travellers</option>
+            <option value="5+">5+ Travellers</option>
+          </select>
+
+        </div>
+
+
+        <div class="trip-form-group">
+
+          <label for="tripBudget">
+            Budget / night
+          </label>
+
+          <select id="tripBudget">
+            <option value="Under ₹5,000">
+              Under ₹5,000
+            </option>
+
+            <option value="₹5,000 – ₹10,000">
+              ₹5,000 – ₹10,000
+            </option>
+
+            <option value="₹10,000 – ₹20,000">
+              ₹10,000 – ₹20,000
+            </option>
+
+            <option value="Above ₹20,000">
+              Above ₹20,000
+            </option>
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <div class="trip-form-group full-width">
+
+        <label for="tripType">
+          What kind of trip?
+        </label>
+
+        <select id="tripType">
+          <option value="Romantic Escape">
+            Romantic Escape
+          </option>
+
+          <option value="Family Holiday">
+            Family Holiday
+          </option>
+
+          <option value="Friends Adventure">
+            Friends Adventure
+          </option>
+
+          <option value="Solo Journey">
+            Solo Journey
+          </option>
+
+          <option value="Wellness Retreat">
+            Wellness Retreat
+          </option>
+        </select>
+
+      </div>
+
+
+      <button class="create-trip-button" type="submit">
+        Create My Trip
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+      <p id="tripFormMessage"></p>
+
+    </form>
+
+  </div>
+
+</div>
+
+  <script src="./Javascript/experience.js"></script>
+</body>
+</html>
